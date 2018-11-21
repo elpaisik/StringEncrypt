@@ -1,36 +1,42 @@
-# [Start Bootstrap](http://startbootstrap.com/) - [SB Admin 2](http://startbootstrap.com/template-overviews/sb-admin-2/)
-[![CDNJS](https://img.shields.io/cdnjs/v/startbootstrap-sb-admin-2.svg)](https://cdnjs.com/libraries/startbootstrap-sb-admin-2)
+# String Encrpytion
 
-[SB Admin 2](http://startbootstrap.com/template-overviews/sb-admin-2/) is an open source, admin dashboard template for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/).
+Simple Template for encryption and decryption of Strings with JavaScript using Web Cryptography API
 
 ## Getting Started
 
-To begin using this template, choose one of the following options to get started:
-* [Download the latest release on Start Bootstrap](http://startbootstrap.com/template-overviews/sb-admin-2/)
-* Clone the repo: `git clone https://github.com/BlackrockDigital/startbootstrap-sb-admin-2.git`
-* Fork the repo
+1. Open the associated [Github Page](https://elpaisik.github.io/StringEncrypt/pages/forms.html) of this project. 
+2. Choose if you want to use AES-GCM (encouraged) or AES-CBC (only use for backwards compatibility) standard for encryption.
+3. Encrypt a string
+    1. Fill out forms "String to encrypt" & "Password"
+    2. Click Button "Create new pseudo-random vector"
+    3. Click Button "Encrypt"
+    3. Safe vector, password and encrypted string in a local file (the vector does not have to be kept secret according to [wikipedia](https://en.wikipedia.org/wiki/Initialization_vector) and [this stackexchange entry](https://security.stackexchange.com/questions/17044/when-using-aes-and-cbc-is-it-necessary-to-keep-the-iv-secret)).
+4. Decrypt a string
+    1. Enter "Password" and "Vector", which were earlier used for encryption
+    2. Click Button "Decrypt"
 
-## Using the Source Files
+## References 
 
-After cloning the repo take a look at the `gulpfile.js` and check out the tasks available:
-* `gulp` The default task will compile the LESS and JS into the `dist` directory and minify the output, and it will copy all vendor libraries from `bower_components` into the `vendor` directory
-* `gulp dev` The dev task will serve up a local version of the template and will watch the LESS, JS, and HTML files for changes and reload the browser windo automatically
+### Web Cryptography API
+* [SubtleCrypte Mozilla docs](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto)
+* [qnimate](http://qnimate.com/)
+    * [Symmetric Encryption using Web Cryptography API](http://qnimate.com/symmetric-encryption-using-web-cryptography-api/)
+* [Daniel Roesler's Webrypto examples](https://github.com/diafygi/webcrypto-examples)
+    * [Web Cryptography API Live Table](https://diafygi.github.io/webcrypto-examples/)
+    * [AES-GCM examples](https://github.com/diafygi/webcrypto-examples/#aes-gcm)
+    * [AES-CBC examples](https://github.com/diafygi/webcrypto-examples/#aes-cbc)
+* [w3 WebCryptoAPI](https://www.w3.org/TR/WebCryptoAPI/)
+    * [encrypt method](https://www.w3.org/TR/WebCryptoAPI/#SubtleCrypto-method-encrypt)
+    * [decrypt method](https://www.w3.org/TR/WebCryptoAPI/#SubtleCrypto-method-decrypt)
+    * [AES-GCM](https://www.w3.org/TR/WebCryptoAPI/#aes-gcm)
+    * [AES-CBC](https://www.w3.org/TR/WebCryptoAPI/#aes-cbc)
+    * [JavaScript Example Code](https://www.w3.org/TR/WebCryptoAPI/#examples-section)
 
-To update dependencies, run `bower update` and then run `gulp copy` to copy the updated dependencies into the `vendor` directory
+### Bootstrap Theme [SB Admin 2](http://startbootstrap.com/template-overviews/sb-admin-2/)
 
-## Bugs and Issues
-
-Have a bug or an issue with this template? [Open a new issue](https://github.com/BlackrockDigital/startbootstrap-sb-admin-2/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/sb-admin-2/).
+[SB Admin 2](http://startbootstrap.com/template-overviews/sb-admin-2/) is an open source, admin dashboard template for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/).
 
 ## Creator
 
-Start Bootstrap was created by and is maintained by **[David Miller](http://davidmiller.io/)**, Owner of [Blackrock Digital](http://blackrockdigital.io/).
+Created and maintained by [Patrik Dreher](https://elpaisik.github.io/).
 
-* https://twitter.com/davidmillerskt
-* https://github.com/davidtmiller
-
-Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
-
-## Copyright and License
-
-Copyright 2013-2018 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-sb-admin-2/blob/gh-pages/LICENSE) license.
