@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Cryptography</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <br>
+    <div class="col-lg-2">
+    </div>
+    <div class="col-lg-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h1>String encryption with Web Cryptography API</h1>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <form role="form">
+                            <h2>Encryption with AES-GCM</h2>
+                            <p>based on <a href="https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/encrypt">Mozilla doc</a></p>
+                            <div class="alert alert-success">
+                                encouraged according to <a href="https://diafygi.github.io/webcrypto-examples/">Web Cryptography API Live Table</a>.
+                            </div>
+                            <div class="form-group">
+                                <label>String to encrypt:</label>
+                                <input class="form-control" id="data_GCM">
+                            </div>
+                            <div class="form-group">
+                                <label>Password:</label>
+                                <input class="form-control" type="password" id="pwd_GCM">
+                            </div>
+                            <div class="form-group">
+                                <label>Vector:</label>
+                                <br>
+                                <button type="button" class="btn btn-primary" onclick="createRandomVector('GCM')">Create new pseudo-random vector</button>
+                                <br> <br>
+                                <input class="form-control" placeholder="Create new pseudo-random vector for every encryption!" id="vec_GCM">
+                            </div>
+                            <div class="form-group">
+                                <label>Encrypted String:</label>
+                                <br>
+                                <button type="button" class="btn btn-primary" onclick="encryptGCM()">Encrypt</button>
+                                <br> <br>
+                                <input class="form-control" id="encryptedGCM">
+                            </div>
+                            <div class="form-group">
+                                <label>Decrypted String:</label>
+                                <br>
+                                <button type="button" class="btn btn-primary" onclick="decryptGCM()">Decrypt</button>
+                                <br> <br>
+                                <input class="form-control" id="dencryptedGCM">
+                            </div>
+
+                        </form>
+                    </div>
+                    <!-- /.col-lg-6 (nested) -->
+                    <div class="col-lg-6">
+                        <form role="form">
+                            <h2>Encryption with AES-CBC</h2>
+                            <p>based on <a href="http://qnimate.com/passphrase-based-encryption-using-web-cryptography-api/">qnimate tutorial</a></p>
+                            <div class="alert alert-danger">
+                                discouraged according to <a href="https://diafygi.github.io/webcrypto-examples/">Web Cryptography API Live Table</a>.
+                            </div>
+                            <div class="form-group">
+                                <label>String to encrypt:</label>
+                                <input class="form-control" id="data_CBC">
+                            </div>
+                            <div class="form-group">
+                                <label>Password:</label>
+                                <input class="form-control" id="pwd_CBC" type="password">
+                            </div>
+                            <div class="form-group">
+                                <label>Vector:</label>
+                                <br>
+                                <button type="button" class="btn btn-primary" id="btn_vec_CBC" onclick="createRandomVector('CBC')">Create new pseudo-random vector</button>
+                                <br> <br>
+                                <input class="form-control" placeholder="Create new pseudo-random vector for every encryption!" id="vec_CBC">
+                            </div>
+                            <div class="form-group">
+                                <label>Encrypted String:</label>
+                                <br>
+                                <button type="button" class="btn btn-primary" onclick="encryptCBC()">Encrypt</button>
+                                <br> <br>
+                                <input class="form-control" id="encryptedCBC">
+                            </div>
+                            <div class="form-group">
+                                <label>Decrypted String:</label>
+                                <br>
+                                <button type="button" class="btn btn-primary" onclick="decryptCBC()">Decrypt</button>
+                                <br> <br>
+                                <input class="form-control" id="dencryptedCBC">
+                            </div>
+
+                        </form>
+                    </div>
+                    <!-- /.col-lg-6 (nested) -->
+                </div>
+                <!-- /.row (nested) -->
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+
+    <!-- Library for encryption and decryption -->
+    <script src="../js/crypto.js"></script>
+
+</body>
+
+</html>
