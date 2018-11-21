@@ -10,7 +10,7 @@ Simple Template for encryption and decryption of Strings with JavaScript using W
     1. Fill out forms "String to encrypt" & "Password"
     2. Click Button "Create new pseudo-random vector"
     3. Click Button "Encrypt"
-    3. Safe vector, password and encrypted string in a local file (the vector does not have to be kept secret according to [wikipedia](https://en.wikipedia.org/wiki/Initialization_vector) and [this stackexchange entry](https://security.stackexchange.com/questions/17044/when-using-aes-and-cbc-is-it-necessary-to-keep-the-iv-secret)).
+    3. Safe vector, password and encrypted string in a local file (the vector does not have to be kept secret according to [wikipedia](https://en.wikipedia.org/wiki/Initialization_vector) and [this stackexchange entry](https://security.stackexchange.com/questions/17044/when-using-aes-and-cbc-is-it-necessary-to-keep-the-iv-secret), but you should use a new vector for every encryption).
 4. Decrypt a string
     1. Enter "Password" and "Vector", which were earlier used for encryption
     2. Click Button "Decrypt"
