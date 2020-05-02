@@ -4,7 +4,7 @@ Simple Template for encryption and decryption of Strings with JavaScript using W
 
 ## Getting Started
 
-1. Open the associated [Github Page](https://elpaisik.github.io/StringEncrypt/pages/forms.html) of this project. 
+1. Open the [Github Page](https://elpaisik.github.io/StringEncrypt/pages/forms.html) of this project. 
 2. Choose if you want to use AES-GCM (encouraged) or AES-CBC (only use for backwards compatibility) standard for encryption.
 3. Encrypt a string
     1. Fill out forms "String to encrypt" & "Password"
